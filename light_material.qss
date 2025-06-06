@@ -1,0 +1,230 @@
+/* === Базовые стили === */
+QWidget {
+    background-color: #FFFFFF;
+    color: #202020;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+/* === Заголовок окна === */
+QWidget#TitleBar QLabel {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    background: transparent;
+}
+
+/* === Кнопки === */
+QPushButton {
+    background-color: #2962ff;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: #0039cb;
+}
+QPushButton:pressed {
+    background-color: #1c54b2;
+}
+QPushButton:disabled {
+    background-color: #D0D0D0;
+    color: #A0A0A0;
+}
+
+/* === Поля ввода (LineEdit, TextEdit) === */
+QLineEdit, QTextEdit {
+    background-color: #F5F5F5;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 4px;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #2962ff;
+}
+
+/* === ScrollBar === */
+QScrollBar:vertical {
+    width: 10px;
+    background: #FFFFFF;
+    margin: 0px;
+    border: none;
+}
+QScrollBar::handle:vertical {
+    background: #CCCCCC;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* === CheckBox и RadioButton === */
+QCheckBox, QRadioButton {
+    spacing: 5px;
+    color: #202020;
+}
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #2962ff;
+    border: 1px solid #2962ff;
+}
+QCheckBox::indicator:unchecked, QRadioButton::indicator:unchecked {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+/* === Заголовки секций и GroupBox === */
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid #CCCCCC;
+    margin-top: 6px;
+}
+QGroupBox:title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 3px;
+    background-color: #FFFFFF;
+    color: #202020;
+}
+
+/* === Кнопки-ссылки (Flat buttons) === */
+QToolButton {
+    background: transparent;
+    color: #2962ff;
+    border: none;
+}
+QToolButton:hover {
+    text-decoration: underline;
+}
+
+/* === Таблицы и TreeView === */
+QTableView, QTreeView {
+    background-color: #FFFFFF;
+    color: #202020;
+    gridline-color: #CCCCCC;
+    selection-background-color: #D0D0D0;
+    selection-color: #202020;
+}
+QHeaderView::section {
+    background-color: #F5F5F5;
+    color: #202020;
+    padding: 4px;
+    border: 1px solid #CCCCCC;
+}
+
+/* === Списки и ComboBox === */
+QListView {
+    background-color: #FFFFFF;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+}
+QListView::item:selected {
+    background-color: #D0D0D0;
+    color: #202020;
+}
+
+QComboBox {
+    background-color: #FFFFFF;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 4px;
+}
+QComboBox:hover {
+    border: 1px solid #2962ff;
+}
+QComboBox:focus {
+    border: 1px solid #2962ff;
+}
+/* замените путь на свой черный SVG-стрелки */
+QComboBox::down-arrow {
+    image: url(:/icons/arrow_black.svg);
+    width: 12px;
+    height: 12px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border: none;
+    background: transparent;
+}
+/* Выпадающий список, чтобы фон и селект были в той же теме */
+QComboBox QAbstractItemView {
+    background-color: #F5F5F5;
+    border: 1px solid #BBBBBB;
+    selection-background-color: #D0D0D0;
+    color: #202020;
+}
+
+/* === Меню и контекстные меню === */
+QMenu {
+    background-color: #FFFFFF;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+}
+QMenu::item {
+    background-color: transparent;
+    padding: 4px 20px;
+}
+QMenu::item:selected {
+    background-color: #D0D0D0;
+    color: #202020;
+}
+
+/* === Тултипы (подсказки) === */
+QToolTip {
+    background-color: #FFFFE0;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+    padding: 4px;
+}
+
+/* === Статусбар === */
+QStatusBar {
+    background-color: #F5F5F5;
+    color: #202020;
+    border-top: 1px solid #CCCCCC;
+}
+
+/* === Индикаторы загрузки, прогресс-бары === */
+QProgressBar {
+    background-color: #F5F5F5;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    text-align: center;
+}
+QProgressBar::chunk {
+    background-color: #2962ff;
+    width: 20px;
+}
+
+/* === Возможные элементы «успех» (например, валидация) === */
+.success {
+    background-color: #81C784;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* === Спинбоксы === */
+QSpinBox {
+    background-color: #FFFFFF;
+    color: #202020;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 4px;
+}
+QSpinBox:focus {
+    border: 1px solid #2962ff;
+}
+
+/* === Состояния состояния «фокус» и «disabled» === */
+QWidget:disabled {
+    background-color: #F5F5F5;
+    color: #A0A0A0;
+}
